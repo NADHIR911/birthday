@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f0e3;
+            font-family: 'Dancing Script', cursive;
+            overflow: hidden;
+        }
+
+        #clickMe {
+            position: absolute;
+            top: 10%;
+            font-size: 2.5em;
+            cursor: pointer;
+            color: #d17575;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            transition: opacity 0.3s ease;
+        }
+
+        #gift {
+            width: 400px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 1s ease, opacity 1s ease;
+            z-index: 1;
+        }
+
+        #birthdayMessage {
+            font-size: 4em;
+            opacity: 0;
+            transition: opacity 2s ease;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            color: #e9967a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+            cursor: pointer;
+        }
+
+        #kora1 {
+          width: 200px;
+          height: auto;
+          opacity: 0;
+          transition: opacity 2s ease;
+          position: absolute;
+          top: 65%;
+          transform: translateY(-50%);
+          z-index: 4;
+        }
+
+        #midoria1, #jake1 {
+          width: 150px;
+          height: auto;
+          opacity: 0;
+          transition: opacity 2s ease;
+          position: absolute;
+          top: 65%;
+          transform: translateY(-50%);
+          z-index: 4;
+        }
+
+        #midoria1 {
+            right: 10%;
+        }
+
+        #jake1 {
+            left: 10%;
+        }
+
+        #bonkGif {
+            width: 400px;
+            height: auto;
+            opacity: 0;
+            transition: opacity 1s ease;
+            position: absolute;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+    </style>
+</head>
+<body>
+
+    <div id="clickMe">Click on me!</div>
+    <img id="gift" src="giftt.gif" alt="Gift">
+    <div id="birthdayMessage">Happy Birthday!</div>
+    <img id="kora1" src="kora1.jpg" alt="kora1">
+    <img id="midoria1" src="midoria1.gif" alt="midoria1">
+    <img id="jake1" src="jake1.gif" alt="jake1">
+    <img id="bonkGif" src="bonk1.gif" alt="Bonk!">
+
+    <script>
+        const gift = document.getElementById('gift');
+        const birthdayMessage = document.getElementById('birthdayMessage');
+        const clickMe = document.getElementById('clickMe');
+        const kora1 = document.getElementById('kora1');
+        const midoria1 = document.getElementById('midoria1');
+        const jake1 = document.getElementById('jake1');
+        const bonkGif = document.getElementById('bonkGif');
+
+        gift.addEventListener('click', () => {
+            gift.style.transform = 'scale(1.5)';
+            gift.style.opacity = '0';
+            clickMe.style.opacity = '0';
+            setTimeout(() => {
+                birthdayMessage.style.opacity = '1';
+                kora1.style.opacity = '1';
+                midoria1.style.opacity = '1';
+                jake1.style.opacity = '1';
+            }, 1000);
+        });
+
+        clickMe.addEventListener('click',()=>{
+            gift.click();
+        });
+
+        birthdayMessage.addEventListener('click', () => {
+            birthdayMessage.style.opacity = '0';
+            kora1.style.opacity = '0';
+            midoria1.style.opacity = '0';
+            jake1.style.opacity = '0';
+            bonkGif.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
